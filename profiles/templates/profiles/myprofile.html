@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock title %}
+
+{% block content %}
+{% if confirm %}
+    <h1> Updated </h1>
+{% endif %}
+<form action="" method="POST" class="ui form" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" class="ui positive button">Update Profile</button>
+</form>
+{% endblock content %}
